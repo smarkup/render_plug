@@ -1,7 +1,7 @@
 previewsEnabled: true
 
 envVarGroups:
-  - name: EXAMPLE_ENV_VAR_GROUP
+  - name: EXAMPLE_ENV_VAR_GROUP_2
     envVars:
       - key: SYNCED_ENV_VAR
         value: "foo-bar"
