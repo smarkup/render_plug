@@ -1,11 +1,9 @@
 previewsEnabled: true
 
 envVarGroups:
-  - name: EXAMPLE_ENV_VAR_GROUP_2
+  - name: EXAMPLE_ENV_VAR_GROUP
     envVars:
-      - key: SYNCED_ENV_VAR
-        value: "foo-bar"
-      - key: NOT_SYNCED_ENV_VAR
+      - key: ENV_VAR_SYNC_FALSE
         sync: false
       - key: ELIXIR_VERSION
         value: 1.12.0
@@ -15,7 +13,7 @@ services:
     type: web
     env: elixir
     envVars:
-      - fromGroup: EXAMPLE_ENV_VAR_GROUP_2
+      - fromGroup: EXAMPLE_ENV_VAR_GROUP
     buildCommand: mix deps.get --only prod && MIX_ENV=prod mix release --overwrite
     startCommand: _build/prod/rel/render_plug/bin/render_plug start
     healthCheckPath: /
