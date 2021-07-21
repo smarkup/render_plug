@@ -16,6 +16,7 @@ services:
     env: elixir
     envVars:
       - fromGroup: EXAMPLE_ENV_VAR_GROUP_2
+      - fromGroup: EXAMPLE_ENV_VAR_GROUP_LINKED
     buildCommand: mix deps.get --only prod && MIX_ENV=prod mix release --overwrite
     startCommand: _build/prod/rel/render_plug/bin/render_plug start
     healthCheckPath: /
