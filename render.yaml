@@ -17,6 +17,9 @@ services:
     envVars:
       - fromGroup: EXAMPLE_ENV_VAR_GROUP_2
       - fromGroup: EXAMPLE_ENV_VAR_GROUP_LINKED
+      - key: MAILGUN_API_KEY
+        sync: false
+        previewValue: 111222333
     buildCommand: mix deps.get --only prod && MIX_ENV=prod mix release --overwrite
     startCommand: _build/prod/rel/render_plug/bin/render_plug start
     healthCheckPath: /
